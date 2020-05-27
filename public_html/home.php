@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  if (isset($_SESSION['username'])&&$_SESSION['username']!=""){
+  }
+  else
+  {
+    header("Location:index.php");
+  }
+$username=$_SESSION['username'];
+$userid = $_SESSION['user_Id'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +20,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Web-Forum</title>
+  <title>Bare - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,11 +47,9 @@
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signup.php">Sign Up</a>
+            <a class="nav-link" href="#"><?php echo $username;?></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="signin.php">Sign In</a>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -49,7 +59,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h1 class="mt-5">Guest homepage</h1>
+        <h1 class="mt-5">User Homepage</h1>
       </div>
     </div>
   </div>
