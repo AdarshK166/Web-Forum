@@ -1,4 +1,5 @@
 <?php
+// Establishes connection to database
 $host = "localhost";
 $user = "root";
 $pwd  = "";
@@ -13,4 +14,3 @@ echo "connection successful"
 //mysqli_select_db($con,$db) ;
 
 ?>
-//or die("Could not connect") or die("No database")

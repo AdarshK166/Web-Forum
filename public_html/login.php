@@ -1,5 +1,6 @@
 <?php 
 
+    // Insert logic for sign in page
     session_start();
     
     include 'db.php';

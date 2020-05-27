@@ -1,4 +1,7 @@
 <?php
+
+// Insert logic for sign up page
+
 include "db.php";
 
 extract($_POST);
