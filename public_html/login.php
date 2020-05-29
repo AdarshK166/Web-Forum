@@ -22,6 +22,7 @@
     
     if ($array['username'] == $username){
         $_SESSION['username'] = $username;
+        $_SESSION['password'] = $pwd;
         $_SESSION['fname'] = $array['fname'];
         $_SESSION['lname'] = $array['lname'];
         $_SESSION['gender'] = $array['gender'];
