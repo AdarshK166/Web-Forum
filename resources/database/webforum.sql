@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2020 at 12:57 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: May 29, 2020 at 01:58 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -132,7 +132,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `fname`, `lname`, `gender`, `email`, `username`, `password`, `user_upvote`, `user_downvote`) VALUES
-(6, 'test', 'test', 'Male', 'janedoe@xxx.xxx', 'qwerty1', '1a1dc91c907325c69271ddf0c944bc72', 1, 1);
+(6, 'test', 'test', 'Male', 'janedoe@xxx.xxx', 'qwerty1', '1a1dc91c907325c69271ddf0c944bc72', 1, 1),
+(14, 'joe', 'das', 'Male', 'joedas1234@gmail.com', 'joe', '9de6f7c285ae91dd99eb705f6a0dc6d4', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -200,7 +201,7 @@ ALTER TABLE `tbl_post`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
