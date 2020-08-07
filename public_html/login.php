@@ -29,7 +29,7 @@
         $_SESSION['user_upvote'] = $array['user_upvote'];
         $_SESSION['user_downvote'] = $array['user_downvote'];
         $_SESSION['user_Id'] = $array['user_Id'];
-        header("Location: home.php");
+        header("Location: index.php");
     }
     
     else{
