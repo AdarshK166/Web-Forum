@@ -44,7 +44,7 @@ echo "<tr>
 <td><a href=\"post.php?id=$row[post_id]\" class=\"text-dark\">$row[post_title]</a></td>
 <td>$row[post_content]</td>
 <td>$zzz[0]</td>
-<td>$row[user_id]</td>
+<td>$row[post_time]</td>
 </tr>";
 
     }
