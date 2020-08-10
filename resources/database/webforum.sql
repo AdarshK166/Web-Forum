@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 29, 2020 at 01:58 PM
+-- Generation Time: Aug 10, 2020 at 07:49 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -25,20 +25,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `post_id` int(11) NOT NULL,
+  `comment` varchar(1000) NOT NULL,
+  `author` varchar(1000) NOT NULL,
+  `time` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`post_id`, `comment`, `author`, `time`) VALUES
+(2, 'test coment', 'test', ''),
+(2, 'test coment2', 'test1', ''),
+(1, 'this is a test comment', 'zxc', '09-08-2020 (Sun) 00:38:09'),
+(1, 'this is a test comment', 'zxc', '09-08-2020 (Sun) 00:38:22'),
+(1, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 15:23:21'),
+(1, 'testing comment', 'kenny', '09-08-2020 (Sun) 16:25:32'),
+(5, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 16:30:40');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
-  `ad_username` varchar(10) NOT NULL,
-  `ad_password` varchar(10) NOT NULL
+  `admin_name` varchar(100) NOT NULL,
+  `admin_pass` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tbl_admin`
 --
 
-INSERT INTO `tbl_admin` (`ad_username`, `ad_password`) VALUES
-('admin', 'admin'),
+INSERT INTO `tbl_admin` (`admin_name`, `admin_pass`) VALUES
 ('admin', 'admin');
 
 -- --------------------------------------------------------
@@ -89,13 +114,25 @@ CREATE TABLE `tbl_post` (
   `post_id` int(11) NOT NULL,
   `post_title` varchar(20) NOT NULL,
   `post_content` varchar(50) NOT NULL,
-  `post_image` varchar(30) DEFAULT NULL,
-  `post_date` date NOT NULL,
+  `post_image` varchar(50) DEFAULT NULL,
+  `post_time` varchar(30) NOT NULL,
   `cat_id` int(20) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_name` varchar(30) NOT NULL,
   `post_upvote` int(20) NOT NULL DEFAULT 1,
   `post_downvote` int(20) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_post`
+--
+
+INSERT INTO `tbl_post` (`post_id`, `post_title`, `post_content`, `post_image`, `post_time`, `cat_id`, `user_name`, `post_upvote`, `post_downvote`) VALUES
+(1, 'test', 'content', '', '00:00:00', 2, '1', 0, 0),
+(2, 'test2', 'content2', '', '00:00:00', 3, '3', 0, 0),
+(5, 'test3', 'content3', '', '00:00:00', 2, '7', 0, 0),
+(6, 'title1', 'description', NULL, '', 0, '08-08-2020 (Sat) 15:45:01', 1, 1),
+(7, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:41', 1, 'zxc', 1, 1),
+(8, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:51', 1, 'zxc', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -132,8 +169,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `fname`, `lname`, `gender`, `email`, `username`, `password`, `user_upvote`, `user_downvote`) VALUES
-(6, 'test', 'test', 'Male', 'janedoe@xxx.xxx', 'qwerty1', '1a1dc91c907325c69271ddf0c944bc72', 1, 1),
-(14, 'joe', 'das', 'Male', 'joedas1234@gmail.com', 'joe', '9de6f7c285ae91dd99eb705f6a0dc6d4', 1, 1);
+(8, 'abc', 'abc', 'Male', 'dkas@zxc.com', 'zxc', '5fa72358f0b4fb4f2c5d7de8c9a41846', 1, 1),
+(11, 'ken', 'seb', 'Male', 'kennyseb@gmail.com', 'ken', 'f632fa6f8c3d5f551c5df867588381ab', 1, 1),
+(18, 'test', 'test', 'Male', 'test@gmail.com', 'test', '098f6bcd4621d373cade4e832627b4f6', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -195,13 +233,13 @@ ALTER TABLE `tbl_mod`
 -- AUTO_INCREMENT for table `tbl_post`
 --
 ALTER TABLE `tbl_post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
