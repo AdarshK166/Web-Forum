@@ -59,9 +59,7 @@ include 'db.php';
         $admin_name=$_POST['admin_name'];
         $admin_pass=$_POST['admin_pass'];
     }
-    //$admin_query="select * from admin where admin_name='$admin_name' AND admin_pass='$admin_pass'";
-
-    //$run_query=mysqli_query($dbcon,$admin_query);
+    
 
     $query = "select * from tbl_admin where admin_name='$admin_name' AND admin_pass='$admin_pass'";
     $result = mysqli_query($con, $query) or die ("Verification error");

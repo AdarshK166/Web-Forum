@@ -17,16 +17,13 @@
 
 <body>
 
-
 <div class="table-scrol">
     <h1 align="center">All the Users</h1>
 
 <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->
 
-
     <table class="table table-bordered table-hover table-striped" style="table-layout: auto">
         <thead>
-
         <tr>
 
             <th>User Id</th>
