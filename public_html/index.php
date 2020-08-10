@@ -70,7 +70,7 @@ function changeCat(str) {
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello! '.$username.'</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="profile.php">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="profilesetting.php">Settings</a>
                   <!-- <div class="dropdown-divider"></div> -->
                   <a class="dropdown-item" href="logout.php">Log Out</a>
                 </div>
