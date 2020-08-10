@@ -18,7 +18,7 @@
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-               <form action="" method="post" name="signup">
+               <form action="index.php" method="post" name="signup">
                  
 				 <?php 
 				session_start();
@@ -66,7 +66,7 @@
 				  
                   
                   <div class="text-center ">
-                     <button >Edit</button>
+                     <button >go back</button>
                   </div>
                   
                   
