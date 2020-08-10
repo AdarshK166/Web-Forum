@@ -29,7 +29,7 @@
 				include 'db.php';
 				
 				
-				$selectquery =" select *from tbl_user where fname='$username'";
+				$selectquery =" select *from tbl_user where username='$username'";
 				$query = mysqli_query($con,$selectquery );
 				$nums= mysqli_num_rows($query);
 				
