@@ -1,3 +1,12 @@
+<?php
+  session_start();
+  if (isset($_SESSION['admin_name'])&&$_SESSION['admin_name']!=""){
+  }
+              
+$admin_name=$_SESSION['admin_name'];
+            
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Bare - Start Bootstrap Template</title>
+  <title>admin</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,13 +25,55 @@
 </head>
 
 <body>
+ <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Admin Page</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="index.php">Home
+              </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="view_users.php">Users
+            <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="view_userpost.php">Posts</a>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link" href="admin_logout.php">Log Out</a>
+          </li>
+          -->
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <?php echo $admin_name;?></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="admin_profile.php">Profile</a>
+        <a class="dropdown-item" href="admin_logout.php">Log Out</a>
+        </div>
+      </li>
+           
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-
-<div class="table-scrol">
-    <h1 align="center">All the Users</h1>
-
-<div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->
-
+  <div class="table-scrol">
+    <h1 align="center">all the users</h1>
+    </br>
+    
+    
+        
 
     <table class="table table-bordered table-hover table-striped" style="table-layout: auto">
         <thead>

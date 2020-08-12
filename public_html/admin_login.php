@@ -8,6 +8,11 @@
     <link href="vendor/bootstrap/css/buttons.css" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+            <div class="container">
+            <a class="navbar-brand" href="#">Admin Page</a>
+            </div>
+</nav>
    <div class="container">
       <div class="col-md-6 mx-auto text-center">
          <div class="header-title">
@@ -21,7 +26,7 @@
             <div class="myform form ">
             <form role="form" method="post" action="admin_login.php">
                   <div class="form-group">
-                     <input type="text" name="admin_name"  class="form-control my-input" id="admin_name" placeholder="Name">
+                     <input type="text" name="admin_name"  class="form-control my-input" id="admin_name" placeholder="Username">
                   </div>
                   <div class="form-group">
                      <input type="password" name="admin_pass"  class="form-control my-input" id="admin_pass" placeholder="Password">
@@ -74,11 +79,12 @@ include 'db.php';
     {
         $_SESSION['admin_name'] = $admin_name;
         
-        header("Location: view_users.php");
+        //header("Location: view_users.php");
+        header("Location: admin_home.php");
     }
     else {
         echo '<script language="javascript">';
-        echo 'alert("error")';
+        echo 'alert("Admin details are incorrect")';
         echo '</script>';
     }
 
