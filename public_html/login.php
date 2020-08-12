@@ -18,7 +18,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $pwd = md5($password);
-    }
+    
 
     $query = "SELECT * FROM tbl_user WHERE username = '$username' AND password = '$pwd'";
     $result = mysqli_query($con, $query) or die ("Verification error");
@@ -41,5 +41,6 @@
         echo 'alert("Incorrect username or password")';
         echo '</script>';
         echo '<meta http-equiv="refresh" content="0;url=index.php" />';
+    }
     }
 ?>
