@@ -21,7 +21,7 @@ include "db.php";
 
 $q = intval($_GET['q']);
 
-if($q == 0){
+if($q == 11){
     $insert_query = "select * from tbl_post ";
 }
 else{

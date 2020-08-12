@@ -43,10 +43,10 @@
                 echo '<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello! '.$username.'</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="profile.php">Profile</a>
+                  <a class="dropdown-item" href="profilesetting.php">Settings</a>
                   <!-- <div class="dropdown-divider"></div> -->
-                  <a class="dropdown-item" href="#">Log Out</a>
+                  <a class="dropdown-item" href="logout.php">Log Out</a>
                 </div>
               </li>';
               }
@@ -69,8 +69,7 @@
   </nav>
     
     <div class="container">
-        
-        
+        <br>
      <?php   
         
         include "db.php";
@@ -93,11 +92,7 @@
                 </div>
                 <h5><p class=\"mb-1\">$dd</p></h5>
             </div><br><br>";
-            ?>
         
-        
-            <?php
-            if (isset($_SESSION['username'])&&$_SESSION['username']!=""){
         $insert_query1 = "select * from comments where post_id=$q";
         $res1=mysqli_query($con, $insert_query1);
         
@@ -106,7 +101,7 @@
            while($row1=mysqli_fetch_assoc($res1)){
         
 
-            echo "<div class=\"card bg-light border-secondary\">
+            echo "<div class=\"card bg-light border-secondary my-2\">
             <div class=\"card-body\">
             <div class=\"row no-gutters\">
             <div class=\"col-12 col-sm-6 col-md-8\">$row1[comment]</div>
@@ -116,8 +111,6 @@
             </div>";
            }
            }
-          
-            }
             else
             {
               echo "<div class=\"container\"><center>No Comments posted</center></div>";
@@ -127,8 +120,9 @@
   
             <!--Input Box--> 
             <br>
-
-            <div class="card bg-light border-dark"><div class="card-body">
+            
+            <?php if (isset($_SESSION['username'])&&$_SESSION['username']!=""){ ?>
+              <div class="card bg-light border-dark"><div class="card-body">
 
             <form action="#" method="post">
 
@@ -138,20 +132,15 @@
             <button class="btn btn-outline-dark" type="submit" name="submit">Post Comment</button>
             </div>
             </div>
-
-            <!-- <div class="form-row">
-            <div class="col">
-            <input type="text" class="form-control" placeholder="Author Name" name="author">
-            </div>
-            <div class="col">
-            <input type="text" class="form-control" placeholder="Author's Email ID" name="email">
-            </div>
-            </div> -->
-            
-
             </form>
-
             </div></div>
+            <?php }else{ ?>
+              <p>Please login to comment</p>
+              <?php } ?>
+  
+
+      
+            
 
 
                    

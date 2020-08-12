@@ -1,3 +1,14 @@
+<?php
+  session_start();
+  if (isset($_SESSION['username'])&&$_SESSION['username']!=""){
+    $username=$_SESSION['username'];
+    $userid = $_SESSION['user_Id'];
+  }
+  else
+  {
+  }
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +18,52 @@
     <link href="vendor/bootstrap/css/buttons.css" rel="stylesheet">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <?php
+              if (isset($_SESSION['username'])&&$_SESSION['username']!="")
+              {
+                echo '<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello! '.$username.'</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="profile.php">Profile</a>
+                  <a class="dropdown-item" href="profilesetting.php">Settings</a>
+                  <!-- <div class="dropdown-divider"></div> -->
+                  <a class="dropdown-item" href="logout.php">Log Out</a>
+                </div>
+              </li>';
+              }
+              else
+              {
+                echo '<li class="nav-item">
+                <a class="nav-link" href="signup.php">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="signin.php">Sign In</a>
+                </li>';
+              }
+            ?>
+ 
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
    <div class="container">
       <div class="col-md-6 mx-auto text-center">
          <div class="header-title">
@@ -21,7 +78,6 @@
                <form action="index.php" method="post" name="signup">
                  
 				 <?php 
-				session_start();
 				  if (isset($_SESSION['username'])&&$_SESSION['username']!=""){
               $username=$_SESSION['username'];
               $userid = $_SESSION['user_Id'];
@@ -38,35 +94,29 @@
 				
 				?>
 					
-				<div class="form-group">
-                     first name:<?php echo $res['fname']; ?>
+				<div class="card bg-light border-secondary my-4">
+                     <h5 class="text-center">First Name:  <?php echo $res['fname']; ?></h5>
                   </div>
-                  <div class="form-group">
-					Last name: <?php echo $res['lname']; ?>
+                  <div class="card bg-light border-secondary my-4">
+                  <h5 class="text-center">Last name: <?php echo $res['lname']; ?></h5>
                   </div>
-                  <div class="form-group">
-					Gender: <?php echo $res['gender']; ?>
+                  <div class="card bg-light border-secondary my-4">
+                  <h5 class="text-center">Gender: <?php echo $res['gender']; ?></h5>
                   </div>
-                  <div class="form-group">
-                    Email: <?php echo $res['email']; ?>
+                  <div class="card bg-light border-secondary my-4">
+                  <h5 class="text-center">Email: <?php echo $res['email']; ?></h5>
                   </div>
-                  <div class="form-group">
-                    Username: <?php echo $res['username']; ?>
+                  <div class="card bg-light border-secondary my-4">
+                  <h5 class="text-center"> Username: <?php echo $res['username']; ?></h5>
                   </div>
-                  <div class="form-group">
-                    Password: <?php echo $res['password']; ?>
-                  </div>	
-					
-					
+		
 				<?php
 				}
 				 }
 				?>
-				 
-				  
-                  
+
                   <div class="text-center ">
-                     <button >go back</button>
+                     <button class="btn btn-primary">go back</button>
                   </div>
                   
                   
