@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-            <a class="navbar-brand" >Admin Page</a>
+            <a class="navbar-brand"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
             </div>
 </nav>
    <div class="container">

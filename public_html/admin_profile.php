@@ -1,12 +1,14 @@
 <?php
   session_start();
   if (isset($_SESSION['admin_name'])&&$_SESSION['admin_name']!=""){
+    $admin_name=$_SESSION['admin_name'];
+    $id = $_SESSION['id'];
   }
   else
   {
-    header("Location:admin_login.php");
+    
   }
-$username=$_SESSION['admin_name'];
+
 
 ?>
 
@@ -23,7 +25,7 @@ $username=$_SESSION['admin_name'];
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-            <a class="navbar-brand" >Admin Page</a>
+            <a class="navbar-brand"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,17 +36,22 @@ $username=$_SESSION['admin_name'];
                     
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="view_users.php">Users
-                    <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="view_userpost.php"> Posts </a>
-                </li>
+                <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Users</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="view_users.php">User List</a>
+        <a class="dropdown-item" href="view_userpost.php">User Post</a>
+        </div>
+      </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link" href="admin_logout.php">Log Out</a>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <?php echo $admin_name;?></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="admin_profile.php">Profile</a>
+                <a class="dropdown-item" href="admin_logout.php">Log Out</a>
+                </div>
                 </li>
                 
                 
@@ -65,13 +72,14 @@ $username=$_SESSION['admin_name'];
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-            <form action="#" method="post" >
+            <form action="admin_updateconf.php" method="post" name="signup">
+
                  
 				 <?php 
 				
 				  if (isset($_SESSION['admin_name'])&&$_SESSION['admin_name']!=""){
               $admin_name=$_SESSION['admin_name'];
-              
+              $id = $_SESSION['id'];
             
 				include 'db.php';
 				
@@ -82,7 +90,7 @@ $username=$_SESSION['admin_name'];
 				
 				while($res = mysqli_fetch_array($query))
 				{
-                    $id=$nums[0];
+                    
 				?>
 
             <div class="table-responsive">		
@@ -95,6 +103,11 @@ $username=$_SESSION['admin_name'];
                 <th>Name</th>
 				<td><?php echo $res['first_name']." ".$res['last_name']; ?></td>
 			    </tr>
+                
+                <tr>
+				<th>Gender</th>
+				<td><?php echo $res['gender']; ?></td>
+                 </tr>
 
 			    <tr>
 				<th>Email</th>
@@ -112,10 +125,7 @@ $username=$_SESSION['admin_name'];
                 <td>**********</td>
                 </tr>
                 
-			    <tr>
-				<th>Gender</th>
-				<td><?php echo $res['gender']; ?></td>
-                 </tr>
+			    
                 
 					</table>
 	        </div>

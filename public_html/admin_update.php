@@ -1,4 +1,14 @@
+<?php
+  session_start();
+  if (isset($_SESSION['admin_name'])&&$_SESSION['admin_name']!=""){
+    $admin_name=$_SESSION['admin_name'];
+    $id = $_SESSION['id'];
+  }
+  else
+  {
+  }
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,20 +18,13 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/bootstrap/css/buttons.css" rel="stylesheet">
 </head>
-<?php
-  include 'db.php';
-  session_start();
-$id=$_SESSION['id'];
-$query=mysqli_query($con,"select * from tbl_admin where id='$id'")or die(mysqli_error());
-$row=mysqli_fetch_array($query);
-  ?>
 
 
 <body>
    <!-- Navigation -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-            <a class="navbar-brand" >Admin Page</a>
+            <a class="navbar-brand"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,18 +35,23 @@ $row=mysqli_fetch_array($query);
                     
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="view_users.php">Users
-                    <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="view_userpost.php"> Posts </a>
-                </li>
+                <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Users</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="view_users.php">User List</a>
+        <a class="dropdown-item" href="view_userpost.php">User Post</a>
+        </div>
+      </li>
                 
-                <li class="nav-item">
-                    <a class="nav-link" href="admin_logout.php">Log Out</a>
-                </li>
+                <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <?php echo $admin_name;?></a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="admin_profile.php">Profile</a>
+               <a class="dropdown-item" href="admin_logout.php">Log Out</a>
+               </div>
+               </li>
                 
                 
                 </ul>
@@ -62,34 +70,62 @@ $row=mysqli_fetch_array($query);
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-               <form action="#" method="post" >
+               <form action="admin_updateconf.php" method="post" name="signup" >
                   
 
-                  <div class="form-group">
-                  <input type="text" name="first_name"  class="form-control my-input"  placeholder="First name" >
-                  </div>
+                  <?php 
 
-                  <div class="form-group">
-                     <input type="text" name="last_name"  class="form-control my-input"  placeholder="Last name">
-                  </div>
+                  if (isset($_SESSION['admin_name'])&&$_SESSION['admin_name']!=""){
+                  $admin_name=$_SESSION['admin_name'];
+                  $id = $_SESSION['id'];
 
+                  include 'db.php';
+
+
+                  $selectquery =" select * from tbl_admin where admin_name='$admin_name'";
+                  $query = mysqli_query($con,$selectquery );
+                  $nums= mysqli_num_rows($query);
+
+                  while($res = mysqli_fetch_array($query))
+                  {
+
+                  ?>
+   
+                  <div class="form-group">
                   
-                  <div class="form-group">
-                     <input type="email" name="email"  class="form-control my-input"  placeholder="Email">
-                  </div>
+                     <p>First name:</p>   
+                     <input type="text" name="first_name"  class="form-control my-input" id="first_name" placeholder="first name *"  value="<?php echo $res['first_name']; ?>"required>
+                     </div>
+                     <div class="form-group">
+                     <p>Last name: </p> 
+                     <input type="text" name="last_name"  class="form-control my-input" id="last_name" placeholder="last name *"  value="<?php echo $res['last_name']; ?>"required>
+                     </div>
+                     <div class="form-group">
+                     <p>Gender: </p> 
+                     <input type="text" name="gender"  class="form-control my-input" id="gender" placeholder="gender *"  value="<?php echo $res['gender']; ?>"required>
+                     </div>
+                     <div class="form-group">
+                     <p>Email:</p>  
+                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="email *"  value="<?php echo $res['email']; ?>"required>
+                     </div>
+                     <br>
 
-                 
-                  <div class="form-group">
-                     <input type="text" name="admin_name"  class="form-control my-input" placeholder="Adminname">
-                  </div>
-                  <div class="form-group">
-                     <input type="password" name="admin_pass"  class="form-control my-input" placeholder="Password">
-                  </div>
-                  
+                  <?php
+                  }
+                  }
+                  ?>
+
                   <div class="text-center ">
-                     <button type="submit" class="btn btn-info" name="submit" class="btn btn-info" > Save</button>
-                     
+                   <div class="text-center ">
+                     <button type="submit" class="btn btn-info">Save</button>
+                     <a href="admin_profile.php"  class="btn btn-info" role="button">Go Back</a>
+                       </div>
                   </div>
+
+
+
+
+
 
 
                </form>
@@ -104,38 +140,3 @@ $row=mysqli_fetch_array($query);
 </body>
 </html>
 
-<?php
-
-      if(isset($_POST['submit'])){
-
-        $first_name=$_POST['first_name'];
-        $last_name=$_POST['last_name'];
-        $email=$_POST['email'];
-        $admin_name=$_POST['admin_name'];
-        $admin_pass=$_POST['admin_pass']; 
-        
-        $query="UPDATE tbl_admin SET first_name='$first_name', 
-        last_name='$last_name', email='$email', admin_name='$admin_name',
-         admin_pass='$admin_pass'   WHERE id= '$id')";
-        
-
-/*
-        $fullname = $_POST['fname'];
-        $gender = $_POST['gender'];
-        $age = $_POST['age'];
-        $address = $_POST['address'];
-      $query = "UPDATE users SET full_name = '$fullname',
-                      gender = '$gender', age = $age, address = '$address'
-                      WHERE user_id = '$id'";
-                      */
-                    $result = mysqli_query($con, $query) or die(mysqli_error($con));
-                    ?>
-
-                     
-echo '<script language="javascript">';
-                    echo 'alert("data updated")';
-                    echo '</script>';
-        <?php
-             }
-                           
-?>  

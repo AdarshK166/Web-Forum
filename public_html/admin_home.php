@@ -49,7 +49,7 @@ function changeCat(str) {
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Admin Page</a>
+    <a class="navbar-brand"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -60,6 +60,7 @@ function changeCat(str) {
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          <!--
           <li class="nav-item">
             <a class="nav-link" href="view_users.php">Users
               
@@ -68,11 +69,21 @@ function changeCat(str) {
           <li class="nav-item">
             <a class="nav-link" href="view_userpost.php">Posts</a>
           </li>
-          <!--
+         
           <li class="nav-item">
             <a class="nav-link" href="admin_logout.php">Log Out</a>
           </li>
           -->
+
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Users</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="view_users.php">User List</a>
+        <a class="dropdown-item" href="view_userpost.php">User Post</a>
+        </div>
+      </li>
+
           <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <?php echo $username;?></a>
