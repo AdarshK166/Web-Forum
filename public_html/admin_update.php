@@ -92,7 +92,7 @@
                   ?>
    
                   <div class="form-group">
-                  <br>
+                  
                      <p>First name:</p>   
                      <input type="text" name="first_name"  class="form-control my-input" id="first_name" placeholder="first name *"  value="<?php echo $res['first_name']; ?>"required>
                      </div>
