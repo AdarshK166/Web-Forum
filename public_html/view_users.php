@@ -82,7 +82,7 @@ $admin_name=$_SESSION['admin_name'];
             <th>Gender</th>
             <th>Email</th>
             <th>Username</th>
-            <th>User Pass</th>
+           <!-- <th>User Pass</th>  -->
             <th>Delete User</th>
         </tr>
         </thead>
@@ -100,7 +100,7 @@ $admin_name=$_SESSION['admin_name'];
             $gender=$row[3];
             $email=$row[4];
             $username=$row[5];
-            $password=$row[6];
+           // $password=$row[6];
            
 
 
@@ -115,7 +115,7 @@ $admin_name=$_SESSION['admin_name'];
             <td><?php echo  $gender;  ?></td>
             <td><?php echo  $email;  ?></td>
             <td><?php echo  $username;  ?></td>
-            <td><?php echo  $password;  ?></td>
+          
            <td><a href="delete_user.php?del=<?php echo $user_id ?>"><button class="btn btn-danger">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->
         
         </tr>
