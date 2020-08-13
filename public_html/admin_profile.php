@@ -23,7 +23,7 @@ $username=$_SESSION['admin_name'];
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-            <a class="navbar-brand" href="#">Admin Page</a>
+            <a class="navbar-brand" >Admin Page</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,18 +46,7 @@ $username=$_SESSION['admin_name'];
                 <li class="nav-item">
                     <a class="nav-link" href="admin_logout.php">Log Out</a>
                 </li>
-                <!--
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Hello!
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
-                <a class="dropdown-item" href="admin_logout.php">Log Out</a>
-                </div>
-                </li>
-                
-               --> 
                 
                 </ul>
             </div>
@@ -76,7 +65,7 @@ $username=$_SESSION['admin_name'];
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-               <form action="" method="post" name="signup">
+            <form action="#" method="post" >
                  
 				 <?php 
 				
@@ -132,7 +121,7 @@ $username=$_SESSION['admin_name'];
 	        </div>
 				
             <div class="text-center ">
-				<a href="edit_acc.php?del=<?php echo $id ?>"  class="btn btn-info" role="button">edit</a>
+				<a href="admin_update.php"  class="btn btn-info" role="button">edit</a>
                  </div>	
 				<?php
                 }
