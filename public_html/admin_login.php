@@ -10,7 +10,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
-            <a class="navbar-brand" href="#">Admin Page</a>
+            <a class="navbar-brand" >Admin Page</a>
             </div>
 </nav>
    <div class="container">
@@ -24,7 +24,7 @@
       <div class="row">
          <div class="col-md-4 mx-auto">
             <div class="myform form ">
-            <form role="form" method="post" action="admin_login.php">
+            <form action="#" method="post" >
                   <div class="form-group">
                      <input type="text" name="admin_name"  class="form-control my-input" id="admin_name" placeholder="Username">
                   </div>
@@ -71,7 +71,7 @@ include 'db.php';
     $query = "select * from tbl_admin where admin_name='$admin_name' AND admin_pass='$admin_pass'";
     $result = mysqli_query($con, $query) or die ("Verification error");
     $array = mysqli_fetch_array($result);
-
+    $_SESSION["id"]=$row['id'];
 
 
 
@@ -90,3 +90,6 @@ include 'db.php';
 
 
 ?>
+
+
+

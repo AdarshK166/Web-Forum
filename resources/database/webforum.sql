@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2020 at 07:49 AM
+-- Generation Time: Aug 13, 2020 at 02:18 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -46,7 +46,8 @@ INSERT INTO `comments` (`post_id`, `comment`, `author`, `time`) VALUES
 (1, 'this is a test comment', 'zxc', '09-08-2020 (Sun) 00:38:22'),
 (1, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 15:23:21'),
 (1, 'testing comment', 'kenny', '09-08-2020 (Sun) 16:25:32'),
-(5, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 16:30:40');
+(5, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 16:30:40'),
+(1, 'testing comment', 'ken', '12-08-2020 (Wed) 01:05:14');
 
 -- --------------------------------------------------------
 
@@ -55,6 +56,11 @@ INSERT INTO `comments` (`post_id`, `comment`, `author`, `time`) VALUES
 --
 
 CREATE TABLE `tbl_admin` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `gender` varchar(50) NOT NULL,
   `admin_name` varchar(100) NOT NULL,
   `admin_pass` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -63,8 +69,9 @@ CREATE TABLE `tbl_admin` (
 -- Dumping data for table `tbl_admin`
 --
 
-INSERT INTO `tbl_admin` (`admin_name`, `admin_pass`) VALUES
-('admin', 'admin');
+INSERT INTO `tbl_admin` (`id`, `first_name`, `last_name`, `email`, `gender`, `admin_name`, `admin_pass`) VALUES
+(1, 'test1', 'testl', 'testemail@gmail.com', 'male', 'admin', 'admin'),
+(2, 'test2', 'test2', 'test2email@gmail.com', 'female', 'admin2', 'admin2');
 
 -- --------------------------------------------------------
 
@@ -128,11 +135,9 @@ CREATE TABLE `tbl_post` (
 
 INSERT INTO `tbl_post` (`post_id`, `post_title`, `post_content`, `post_image`, `post_time`, `cat_id`, `user_name`, `post_upvote`, `post_downvote`) VALUES
 (1, 'test', 'content', '', '00:00:00', 2, '1', 0, 0),
-(2, 'test2', 'content2', '', '00:00:00', 3, '3', 0, 0),
-(5, 'test3', 'content3', '', '00:00:00', 2, '7', 0, 0),
-(6, 'title1', 'description', NULL, '', 0, '08-08-2020 (Sat) 15:45:01', 1, 1),
 (7, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:41', 1, 'zxc', 1, 1),
-(8, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:51', 1, 'zxc', 1, 1);
+(8, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:51', 1, 'zxc', 1, 1),
+(9, 'test20', 'ttext', NULL, '12-08-2020 (Wed) 01:16:23', 6, 'ken', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -169,13 +174,41 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `fname`, `lname`, `gender`, `email`, `username`, `password`, `user_upvote`, `user_downvote`) VALUES
-(8, 'abc', 'abc', 'Male', 'dkas@zxc.com', 'zxc', '5fa72358f0b4fb4f2c5d7de8c9a41846', 1, 1),
 (11, 'ken', 'seb', 'Male', 'kennyseb@gmail.com', 'ken', 'f632fa6f8c3d5f551c5df867588381ab', 1, 1),
-(18, 'test', 'test', 'Male', 'test@gmail.com', 'test', '098f6bcd4621d373cade4e832627b4f6', 1, 1);
+(20, 'test1', 'test', 'Male', 'joedas1234@gmail.com', 't1', '83f1535f99ab0bf4e9d02dfd85d3e3f7', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `full_name` text NOT NULL,
+  `gender` text NOT NULL,
+  `age` int(11) NOT NULL,
+  `address` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`, `full_name`, `gender`, `age`, `address`) VALUES
+(3, 'admin', '123', 'angel jude', 'male', 24, 'himamaylan city');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_category`
@@ -208,6 +241,12 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -233,13 +272,19 @@ ALTER TABLE `tbl_mod`
 -- AUTO_INCREMENT for table `tbl_post`
 --
 ALTER TABLE `tbl_post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
