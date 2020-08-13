@@ -40,13 +40,13 @@ if($result)
     echo '<script language="javascript">';
     echo 'alert("Successfully updated")';
     echo '</script>';
-    // echo '<meta http-equiv="refresh" content="0;url=signin.php" />';
+     echo '<meta http-equiv="refresh" content="0;url=profile.php" />';
 }
 else{
     echo '<script language="javascript">';
     echo 'alert("Error")';
     echo '</script>';
-    // echo '<meta http-equiv="refresh" content="0;url=index.php" />';                                
+    echo '<meta http-equiv="refresh" content="0;url=index.php" />';                                
     }
 
 

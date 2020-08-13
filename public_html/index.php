@@ -155,7 +155,7 @@ button{
           <tr>
             <th scope="col">Title</th>
             <th scope="col">Description</th>
-            <th scope="col">Posts</th>
+            <th scope="col">Comments</th>
             <th scope="col">Date/Time</th>
           </tr>
         </thead>

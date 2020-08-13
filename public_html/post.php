@@ -91,7 +91,9 @@
                     <h5 class=\"display-4\">$qq</h5>
                         <small>$tt by <b>$aa</b></small>
                 </div>
-                <div><img src=\"img/$ii\" class=\"rounded float-left\" ></div>
+                </br>
+                <div><img src=\"img/$ii\" class=\"rounded float-left w-50\" ></div>
+                </br></br>
                 <h5><p class=\"mb-1\">$dd</p></h5>
             </div><br><br>";
         
