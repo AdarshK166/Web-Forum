@@ -4,6 +4,10 @@
 
 include "db.php";
 
+  session_start();
+    $username=$_SESSION['username'];
+    $userid = $_SESSION['user_Id'];
+
 extract($_POST);
 
 	$fname = str_replace("'","`",$fname); 
@@ -12,14 +16,14 @@ extract($_POST);
 	$lname = str_replace("'","`",$lname); 
     $lname = mysqli_real_escape_string($con,$lname); 
     
-    $gender = str_replace("'","`",$gender); 
-    $gender = mysqli_real_escape_string($con,$gender);
+    // $gender = str_replace("'","`",$gender); 
+    // $gender = mysqli_real_escape_string($con,$gender);
     
     $email = str_replace("'","`",$email); 
 	$email = mysqli_real_escape_string($con,$email);
 	        
-	$username = str_replace("'","`",$username); 
-	$username = mysqli_real_escape_string($con,$username); 
+	// $username = str_replace("'","`",$username); 
+	// $username = mysqli_real_escape_string($con,$username); 
 
 	// $password = str_replace("'","`",$password); 
 	// $password = mysqli_real_escape_string($con,$password);
@@ -28,7 +32,7 @@ extract($_POST);
     
 //$sql = "INSERT INTO tbl_user (fname,lname,gender,email,username,password) VALUES ('$fname','$lname','$gender','$email','$username','$password')";
 
-$updatequery = "update tbl_user set fname='$fname',lname='$lname',gender='$gender',email='$email' where username ='$username' ";
+$updatequery = "update tbl_user set fname='$fname',lname='$lname',email='$email' where username ='$username' ";
 $result = mysqli_query($con,$updatequery);
 		
 if($result)
