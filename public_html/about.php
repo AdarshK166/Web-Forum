@@ -72,7 +72,11 @@ button{
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="signin.php">Sign In</a>
-                </li>';
+                </li>
+		<li class="nav-item">
+                <a class="nav-link" href="admin_login.php">Admin login</a>
+                </li>
+		';
               }
             ?>
  
