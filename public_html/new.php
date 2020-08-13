@@ -21,15 +21,12 @@
   </head>
   <body>
         <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="index.php">
-                  <img src="images/icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                  E-Commerce Forum
-                </a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
               </nav>
 
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-4">Add a new Topic</h1><br>
+            <h1 class="display-4">Create a new post</h1><br>
             <div class="container">
 
               

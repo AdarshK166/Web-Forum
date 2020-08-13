@@ -165,11 +165,11 @@ button{
     </div>
 
       <br><br><br>
-      <footer>
+      <!-- <footer>
  <center>
   <h6 class="footer">Footer<h6>
   </center>
-      </footer>
+      </footer> -->
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.slim.min.js"></script>

@@ -28,7 +28,7 @@ $admin_name=$_SESSION['admin_name'];
  <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-    <a class="navbar-brand"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
+    <a class="navbar-brand" href="admin_home.php"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

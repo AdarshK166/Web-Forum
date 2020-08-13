@@ -23,7 +23,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <a class="navbar-brand" href="index.php"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -87,7 +87,7 @@
                      <input type="password" name="newPassword"  class="form-control my-input" id="newPass" placeholder="New Password">
                     </div>
                   <div class="text-center ">
-                     <button type="submit" class=" btn btn-block send-button tx-tfm">Sign In</button>
+                     <button type="submit" class=" btn btn-block send-button tx-tfm">Change Password</button>
                   </div>
                   
                </form>
