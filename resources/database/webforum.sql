@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2020 at 02:18 AM
+-- Generation Time: Aug 13, 2020 at 12:30 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -70,8 +70,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id`, `first_name`, `last_name`, `email`, `gender`, `admin_name`, `admin_pass`) VALUES
-(1, 'test1', 'testl', 'testemail@gmail.com', 'male', 'admin', 'admin'),
-(2, 'test2', 'test2', 'test2email@gmail.com', 'female', 'admin2', 'admin2');
+(1, 'testing', 'testing', 'test@gmail.com', 'male', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -134,10 +133,8 @@ CREATE TABLE `tbl_post` (
 --
 
 INSERT INTO `tbl_post` (`post_id`, `post_title`, `post_content`, `post_image`, `post_time`, `cat_id`, `user_name`, `post_upvote`, `post_downvote`) VALUES
-(1, 'test', 'content', '', '00:00:00', 2, '1', 0, 0),
 (7, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:41', 1, 'zxc', 1, 1),
-(8, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:51', 1, 'zxc', 1, 1),
-(9, 'test20', 'ttext', NULL, '12-08-2020 (Wed) 01:16:23', 6, 'ken', 1, 1);
+(8, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:51', 1, 'zxc', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -174,31 +171,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `fname`, `lname`, `gender`, `email`, `username`, `password`, `user_upvote`, `user_downvote`) VALUES
-(11, 'ken', 'seb', 'Male', 'kennyseb@gmail.com', 'ken', 'f632fa6f8c3d5f551c5df867588381ab', 1, 1),
-(20, 'test1', 'test', 'Male', 'joedas1234@gmail.com', 't1', '83f1535f99ab0bf4e9d02dfd85d3e3f7', 1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
-  `username` text NOT NULL,
-  `password` text NOT NULL,
-  `full_name` text NOT NULL,
-  `gender` text NOT NULL,
-  `age` int(11) NOT NULL,
-  `address` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `username`, `password`, `full_name`, `gender`, `age`, `address`) VALUES
-(3, 'admin', '123', 'angel jude', 'male', 24, 'himamaylan city');
+(11, 'ken', 'seb', 'Male', 'kenseb@gmail.comm', 'ken', 'f632fa6f8c3d5f551c5df867588381ab', 1, 1),
+(26, 'john', 'joe', 'Male', 'johnjoe@gmail.com', 'john', '202cb962ac59075b964b07152d234b70', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -241,12 +215,6 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -278,13 +246,7 @@ ALTER TABLE `tbl_post`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
