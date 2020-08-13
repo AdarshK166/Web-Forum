@@ -20,7 +20,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" href="index.php">Start Bootstrap</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -119,6 +119,8 @@
                      <div class="text-center ">
                      <button type="submit" class="btn btn-info">Update Details</button>
                      <button type="button" onClick="window.location.href='index.php'" class=" btn btn-primary">Go Back</button>
+                     <div><br></div>
+                     <button type="button" onClick="window.location.href='changePass.php'" class=" btn btn-primary">Change Password</button>
                   </div>
                   </div>
 

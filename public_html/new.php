@@ -33,7 +33,7 @@
             <div class="container">
 
               
-                  <form action="new.php" method="post" enctype=”multipart/form-data>
+                  <form action="new.php" method="post" enctype="multipart/form-data">
 
 
                     <div class="form-group">
@@ -103,12 +103,15 @@
 
        if(isset($_POST['submit'])){
            
-
+    $msg = ""; 
     $qu = $_POST['question'];
     $se = $_POST['select'];
     //$au = addslashes(file_get_contents($_FILES["image"]["tmp_name"])); 
     $em = $_SESSION['username'];
     $de = $_POST['description'];
+    $filename = $_FILES["uploadfile"]["name"]; 
+    $tempname = $_FILES["uploadfile"]["tmp_name"];     
+    $folder = "img/".$filename; 
 
     
            
@@ -127,9 +130,17 @@ $timestamp = time();
 $date_time = date("d-m-Y (D) H:i:s", $timestamp);
            
            
-    $insert_query = "insert into tbl_post (post_title, post_content, cat_id, user_name, post_time) values ('$qu','$de','$se','$em','$date_time')";
+    $insert_query = "insert into tbl_post (post_title, post_content, cat_id, user_name, post_time, post_image) values ('$qu','$de','$se','$em','$date_time','$filename')";
 
 $res=mysqli_query($con, $insert_query);
+if (move_uploaded_file($tempname, $folder))  { 
+  $msg = "Image uploaded successfully"; 
+  echo "$msg";
+}else{ 
+  $msg = "Failed to upload image"; 
+  echo "$msg";
+} 
+ 
                
                echo "<script>alert('Your Forum has been successfully added')</script>";
                header("Location:index.php");

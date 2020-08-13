@@ -83,6 +83,7 @@
         $dd=$arr['post_content'];
         $aa=$arr['user_name'];
         $tt=$arr['post_time'];
+        $ii=$arr['post_image'];
         
         
             echo "<div class=\"list-group\">
@@ -90,6 +91,7 @@
                     <h5 class=\"display-4\">$qq</h5>
                         <small>$tt by <b>$aa</b></small>
                 </div>
+                <div><img src=\"img/$ii\" class=\"rounded float-left\" ></div>
                 <h5><p class=\"mb-1\">$dd</p></h5>
             </div><br><br>";
         

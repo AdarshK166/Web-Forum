@@ -124,7 +124,7 @@ button{
         <div class="d-flex bd-highlight mb-3">
             <div class="p-2 bd-highlight"></div>
             <div class="p-2 bd-highlight">
-                <a class="btn btn-primary btn-info" href="new.php" role="button">+ New Topic</a>
+                <a class="btn btn-primary btn-info" href="new.php" role="button">+ New Post</a>
             </div>
             <div class="ml-auto p-2 bd-highlight"></div>
           </div>
@@ -137,8 +137,8 @@ button{
       <table class="table table-striped ">
         <thead>
           <tr>
-            <th scope="col">Forum</th>
-            <th scope="col">Category</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
             <th scope="col">Posts</th>
             <th scope="col">Date/Time</th>
           </tr>
