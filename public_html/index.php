@@ -88,13 +88,25 @@ button{
                 echo '<li class="nav-item">
                 <a class="nav-link" href="signup.php">Sign Up</a>
                 </li>
-                <li class="nav-item">
-                <a class="nav-link" href="signin.php">Sign In</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="admin_login.php">Admin login</a>
-                </li>
-                ';
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="signin.php">User</a>
+                  <a class="dropdown-item" href="admin_login.php">Admin</a>
+                  <!-- <div class="dropdown-divider"></div> -->
+                </div>
+              </li>';
+                // echo '<li class="nav-item">
+                // <a class="nav-link" href="signup.php">Sign Up</a>
+                // </li>
+                
+                // <li class="nav-item">
+                // <a class="nav-link" href="signin.php">Sign In</a>
+                // </li>
+                // <li class="nav-item">
+                // <a class="nav-link" href="admin_login.php">Admin login</a>
+                // </li>
+                // ';
               }
             ?>
  
