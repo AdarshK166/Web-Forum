@@ -6,7 +6,7 @@ if(isset($_SESSION['admin_name'])){
 	session_destroy();
 	
     //echo"<script>location.href='admin_login.php'</script>";
-    header("Location: admin_login.php");
+    header("Location: index.php");
    // echo '<meta http-equiv="refresh" content="0;url=admin_login.php" />';
     //header("Location: view_users.php");
 }

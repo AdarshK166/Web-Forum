@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home
+                    <a class="nav-link" href="admin_home.php">Home
                     
                     </a>
                 </li>

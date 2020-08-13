@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Home
+                    <a class="nav-link" href="admin_home.php">Home
                     
                     </a>
                 </li>
@@ -84,7 +84,7 @@
 				include 'db.php';
 				
 				
-				$selectquery =" select *from tbl_admin where admin_name='$admin_name'";
+				$selectquery =" select * from tbl_admin where admin_name='$admin_name'";
 				$query = mysqli_query($con,$selectquery );
 				$nums= mysqli_num_rows($query);
 				
