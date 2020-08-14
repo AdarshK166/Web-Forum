@@ -6,7 +6,7 @@ Agora is a web discussion forum that provide a platform to discuss and share opi
 
 * Homepage
 
-![Homepage](https://github.com/Web-Forum/public_html/img/scr/1.png)
+![Homepage](/public_html/img/scr/1.png)
 
 * Create post
 
