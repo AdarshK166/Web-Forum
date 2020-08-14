@@ -10,18 +10,18 @@ Agora is a web discussion forum that provide a platform to discuss and share opi
 
 * Create post
 
-![Create post](/public_html/img/src/2.png)
+![Create Post](/public_html/img/scr/2.png)
 
 * Posts
 
-![Posts](/public_html/img/src/3.png)
+![Posts](/public_html/img/scr/3.png)
 
 * User list
 
-![User list](/public_html/img/src/4.png)
+![User list](/public_html/img/scr/4.png)
 
 * Post list
 
-![Post list](/public_html/img/src/5.png)
+![Post list](/public_html/img/scr/5.png)
 
 
