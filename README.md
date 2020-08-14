@@ -22,6 +22,6 @@ Agora is a web discussion forum that provide a platform to discuss and share opi
 
 * Post list
 
-![Post list](/public_html/img/src/4.png)
+![Post list](/public_html/img/src/5.png)
 
 
