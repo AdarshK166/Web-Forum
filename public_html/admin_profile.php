@@ -45,7 +45,7 @@
         </div>
       </li>
                 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <?php echo $admin_name;?></a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
