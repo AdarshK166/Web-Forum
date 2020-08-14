@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2020 at 12:30 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Aug 14, 2020 at 10:40 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,7 +47,20 @@ INSERT INTO `comments` (`post_id`, `comment`, `author`, `time`) VALUES
 (1, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 15:23:21'),
 (1, 'testing comment', 'kenny', '09-08-2020 (Sun) 16:25:32'),
 (5, 'this is a test comment', 'kenny', '09-08-2020 (Sun) 16:30:40'),
-(1, 'testing comment', 'ken', '12-08-2020 (Wed) 01:05:14');
+(1, 'testing comment', 'ken', '12-08-2020 (Wed) 01:05:14'),
+(12, 'OnePlus Nord', 'ryan123', '13-08-2020 (Thu) 22:20:17'),
+(13, 'It keeps telling me its in airplane mode', 'ryan123', '13-08-2020 (Thu) 22:44:19'),
+(13, 'how do i get out of this mode?', 'ryan123', '13-08-2020 (Thu) 22:44:57'),
+(13, 'On my motorola you just swipe down from the top twice and tap the aeroplane symbol that turns it on/off', 'ken', '13-08-2020 (Thu) 22:46:39'),
+(12, 'Realme X2 Pro', 'janedoe', '14-08-2020 (Fri) 01:19:26'),
+(12, 'OnePlus Nord', 'janedoe', '14-08-2020 (Fri) 01:37:19'),
+(12, 'OnePlus Nord', 'janedoe1', '14-08-2020 (Fri) 01:47:09'),
+(16, 'test', 'janedoe1', '14-08-2020 (Fri) 01:47:59'),
+(12, 'Realme X2 Pro', 'janedoe123', '14-08-2020 (Fri) 02:09:34'),
+(12, 'OnePlus Nord', 'janedoe123', '14-08-2020 (Fri) 02:12:45'),
+(12, 'OnePlus Nord', 'jane123', '14-08-2020 (Fri) 02:20:00'),
+(12, 'Realme X2 Pro', 'test1', '14-08-2020 (Fri) 02:22:51'),
+(18, 'test', 'test1', '14-08-2020 (Fri) 02:24:04');
 
 -- --------------------------------------------------------
 
@@ -70,7 +83,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id`, `first_name`, `last_name`, `email`, `gender`, `admin_name`, `admin_pass`) VALUES
-(1, 'testing', 'testing', 'test@gmail.com', 'male', 'admin', 'admin');
+(1, 'testing', 'testing1', 'test1@gmail.com', 'male', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -118,8 +131,8 @@ CREATE TABLE `tbl_mod` (
 
 CREATE TABLE `tbl_post` (
   `post_id` int(11) NOT NULL,
-  `post_title` varchar(20) NOT NULL,
-  `post_content` varchar(50) NOT NULL,
+  `post_title` varchar(100) NOT NULL,
+  `post_content` varchar(1000) NOT NULL,
   `post_image` varchar(50) DEFAULT NULL,
   `post_time` varchar(30) NOT NULL,
   `cat_id` int(20) NOT NULL,
@@ -133,8 +146,9 @@ CREATE TABLE `tbl_post` (
 --
 
 INSERT INTO `tbl_post` (`post_id`, `post_title`, `post_content`, `post_image`, `post_time`, `cat_id`, `user_name`, `post_upvote`, `post_downvote`) VALUES
-(7, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:41', 1, 'zxc', 1, 1),
-(8, 'title2', 'description3', NULL, '08-08-2020 (Sat) 15:56:51', 1, 'zxc', 1, 1);
+(12, 'Which Phone is Better Realme X2 Pro or OnePlus Nord?', 'Better phone between OnePlus Nord and Realme X2 Pro?', 'download.jpg', '13-08-2020 (Thu) 22:17:03', 1, 'ken', 1, 1),
+(13, 'Moto e5 Play aeroplane mode?', 'This phone is becoming a headache', 'download (1).jpg', '13-08-2020 (Thu) 22:41:59', 1, 'ryan123', 1, 1),
+(18, 'Check out this game', 'Check out this game', 'Screenshot (104).png', '14-08-2020 (Fri) 02:23:38', 8, 'test1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -171,8 +185,11 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `fname`, `lname`, `gender`, `email`, `username`, `password`, `user_upvote`, `user_downvote`) VALUES
-(11, 'ken', 'seb', 'Male', 'kenseb@gmail.comm', 'ken', 'f632fa6f8c3d5f551c5df867588381ab', 1, 1),
-(26, 'john', 'joe', 'Male', 'johnjoe@gmail.com', 'john', '202cb962ac59075b964b07152d234b70', 1, 1);
+(11, 'ken', 'seb', 'Male', 'kenseb@gmail.comm', 'ken', 'd41d8cd98f00b204e9800998ecf8427e', 1, 1),
+(26, 'john', 'joe', 'Male', 'johnjoe@gmail.com', 'john', '202cb962ac59075b964b07152d234b70', 1, 1),
+(27, 'Ryan', 'Reynolds', 'Male', 'rr@rr.com', 'ryan123', 'd41d8cd98f00b204e9800998ecf8427e', 1, 1),
+(37, 'abcd', 'abc', 'Others', 'dkas@zxcx.com', 'abc', 'd41d8cd98f00b204e9800998ecf8427e', 1, 1),
+(38, 'alex', 'alex', 'Male', 'dkas@zxc.com', 'alex', '946d20c91f154795805cebdefe919ef7', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -240,13 +257,13 @@ ALTER TABLE `tbl_mod`
 -- AUTO_INCREMENT for table `tbl_post`
 --
 ALTER TABLE `tbl_post`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
