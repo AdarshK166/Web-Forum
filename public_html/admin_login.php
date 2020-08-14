@@ -16,7 +16,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="index.php">Home
               <span class="sr-only">(current)</span>
             </a>
@@ -42,8 +42,8 @@
                 echo '<li class="nav-item">
                 <a class="nav-link" href="signup.php">Sign Up</a>
                 </li>
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="signin.php">User</a>
                   <a class="dropdown-item" href="admin_login.php">Admin</a>

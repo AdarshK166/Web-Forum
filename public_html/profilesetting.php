@@ -26,7 +26,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="index.php">Home
               <span class="sr-only"></span>
             </a>
@@ -37,7 +37,7 @@
           <?php
               if (isset($_SESSION['username'])&&$_SESSION['username']!="")
               {
-                echo '<li class="nav-item dropdown">
+                echo '<li class="nav-item dropdown active">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello! '.$username.'</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="profile.php">Profile</a>
