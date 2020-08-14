@@ -10,18 +10,18 @@ Agora is a web discussion forum that provide a platform to discuss and share opi
 
 * Create post
 
-![Create post](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/2.png)
+![Create post](/public_html/img/src/2.png)
 
 * Posts
 
-![Posts](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/3.png)
+![Posts](/public_html/img/src/3.png)
 
 * User list
 
-![User list](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
+![User list](/public_html/img/src/4.png)
 
 * Post list
 
-![Post list](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
+![Post list](/public_html/img/src/4.png)
 
 
