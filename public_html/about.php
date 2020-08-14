@@ -50,6 +50,7 @@ button{
             </a>
           </li>
           <li class="nav-item">
+	   <li class="nav-item active">
             <a class="nav-link" href="about.php">About</a>
           </li>
           <?php
