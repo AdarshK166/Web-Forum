@@ -8,22 +8,22 @@ Agora is a web discussion forum that provide a platform to discuss and share opi
 
 * Homepage
 
-![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/1.png)
+![Homepage](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/1.png)
 
 * Create post
 
-![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/2.png)
+![Create post](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/2.png)
 
 * Posts
 
-![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/3.png)
+![Posts](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/3.png)
 
 * User list
 
-![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
+![User list](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
 
 * Post list
 
-![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
+![Post list](https://github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
 
 
