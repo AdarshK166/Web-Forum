@@ -1,6 +1,8 @@
 <?php
   session_start();
   if (isset($_SESSION['username'])&&$_SESSION['username']!=""){
+    $username=$_SESSION['username'];
+    $userid = $_SESSION['user_Id'];
   }
   else
   {
@@ -20,9 +22,68 @@
      
   </head>
   <body>
-        <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="index.php"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
-              </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+    <a class="navbar-brand" href="index.php"><img src="img/logo/agora.png" alt="logo" style="width:80px"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.php">About</a>
+          </li>
+          <?php
+              if (isset($_SESSION['username'])&&$_SESSION['username']!="")
+              {
+                echo '<li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello! '.$username.'</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="profile.php">Profile</a>
+                  <a class="dropdown-item" href="profilesetting.php">Settings</a>
+                  <!-- <div class="dropdown-divider"></div> -->
+                  <a class="dropdown-item" href="logout.php">Log Out</a>
+                </div>
+              </li>';
+              }
+              else
+              {
+                echo '<li class="nav-item">
+                <a class="nav-link" href="signup.php">Sign Up</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="signin.php">User</a>
+                  <a class="dropdown-item" href="admin_login.php">Admin</a>
+                  <!-- <div class="dropdown-divider"></div> -->
+                </div>
+              </li>';
+                // echo '<li class="nav-item">
+                // <a class="nav-link" href="signup.php">Sign Up</a>
+                // </li>
+                
+                // <li class="nav-item">
+                // <a class="nav-link" href="signin.php">Sign In</a>
+                // </li>
+                // <li class="nav-item">
+                // <a class="nav-link" href="admin_login.php">Admin login</a>
+                // </li>
+                // ';
+              }
+            ?>
+ 
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <div class="jumbotron">
         <div class="container">

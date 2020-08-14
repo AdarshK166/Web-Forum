@@ -1,9 +1,29 @@
-# Web-Forum
+# Project Name: Agora Web forum
 
-*Ignore gitkeeps*
+#Description 
 
-1. ---  Created basic php file/folder structure --- 
+Agora is a web discussion forum that provide a platform to discuss and share opinions or questions on topics from selected categories such as Electronics, TV & appliances, men, women, baby & kid, home & furniture, sports related question etc.
 
-A web forum site to create posts and commment or interact on them by different users.
+# Screenshots
 
-Readme to be updated
+* Homepage
+
+![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/1.png)
+
+* Create post
+
+![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/2.png)
+
+* Posts
+
+![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/3.png)
+
+* User list
+
+![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
+
+* Post list
+
+![Homepage](https://octodex.github.com/AdarshK166/Web-Forum/tree/master/public_html/img/src/4.png)
+
+
