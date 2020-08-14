@@ -18,18 +18,16 @@ if(empty($_POST['oldPassword']) || empty($_POST['newPassword']) )
             echo '<script language="javascript">';
             echo 'alert("Please fill in all the fields")';
             echo '</script>';
-            // echo '<meta http-equiv="refresh" content="0;url=changePass.php" />';
-            
+            echo '<meta http-equiv="refresh" content="0;url=changePass.php" />';
         }else{
 
-        }
 
 //paswords match check
 $oldPass = $_POST['oldPassword'];
 $oldPass1= md5($oldPass);
 $newPass = $_POST['newPassword'];
 $newPass1= md5($newPass);
-echo "$oldPass.$oldPass1.$newPass.$newPass1.$username";
+
 
 $query = "SELECT password FROM tbl_user where username = '$username'";
 $res = mysqli_query($con,$query);
@@ -55,7 +53,7 @@ else{
             echo '<script language="javascript">';
             echo 'alert("Old password is incorrect")';
             echo '</script>';
-            // echo '<meta http-equiv="refresh" content="0;url=changePass.php" />';
+            echo '<meta http-equiv="refresh" content="0;url=changePass.php" />';
 }
-
+        }
  ?>

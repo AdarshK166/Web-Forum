@@ -1,6 +1,6 @@
 # Project Name: Agora Web forum
 
-#Description 
+# Description 
 
 Agora is a web discussion forum that provide a platform to discuss and share opinions or questions on topics from selected categories such as Electronics, TV & appliances, men, women, baby & kid, home & furniture, sports related question etc.
 
